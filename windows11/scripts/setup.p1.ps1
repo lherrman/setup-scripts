@@ -1,13 +1,14 @@
 
 # -- Unpin taskbar icons --
-$tb = (New-Object -ComObject Shell.Application).NameSpace(
-    'shell:::{4234d49b-0245-4df3-b780-3893943456e1}'
-)
-foreach ($item in $tb.Items()) {
-    $item.Verbs() |
-      Where-Object { $_.Name -replace '&','' -match 'Unpin from taskbar' } |
-      ForEach-Object { Write-Host "Unpinning $($item.Name)..."; $_.DoIt() }
-}
+# $tb = (New-Object -ComObject Shell.Application).NameSpace(
+#     'shell:::{4234d49b-0245-4df3-b780-3893943456e1}'
+# )
+# foreach ($item in $tb.Items()) {
+#     $item.Verbs() |
+#       Where-Object { $_.Name -replace '&','' -match 'Unpin from taskbar' } |
+#       ForEach-Object { Write-Host "Unpinning $($item.Name)..."; $_.DoIt() }
+# }
+
 # -- Apply dark-blue theme & tweaks --
 Write-Host 'Applying dark theme, accent, and taskbar settings...'
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type DWord -Force
