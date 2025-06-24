@@ -14,5 +14,5 @@ Write-Host "Downloading and running custom setup under Bypass…" -ForegroundCol
 Start-Process powershell.exe -ArgumentList @(
     '-NoProfile',
     '-ExecutionPolicy','Bypass',
-    '-Command',"iex (irm 'https://raw.githubusercontent.com/lherrman/setup-scripts/31e573ab4e2a0f778c3c81ad79d1bcd985af8137/windows11/scripts/setup.p1.ps1')"
+    '-Command',"iex (irm 'https://raw.githubusercontent.com/lherrman/setup-scripts/refs/heads/main/windows11/scripts/setup.p1.ps1')"
 ) -Wait
