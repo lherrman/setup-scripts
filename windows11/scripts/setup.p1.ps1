@@ -21,7 +21,7 @@ Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanc
 Write-Host 'Restarting Explorer...'
 Stop-Process -Name explorer -Force
 Start-Sleep -Seconds 1
-Start-Process explorer
+# Start-Process explorer
 
 <#
 .SYNOPSIS
