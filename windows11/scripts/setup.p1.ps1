@@ -35,4 +35,4 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 Write-Host 'Installing applications'
-choco install -y vlc 7zip vscode powertoys googlechrome --ignore-checksums --force
+choco install -y vlc 7zip vscode powertoys googlechrome translucenttb --ignore-checksums --force
