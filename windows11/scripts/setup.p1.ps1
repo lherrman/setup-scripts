@@ -14,7 +14,6 @@ Write-Host 'Applying dark theme, accent, and taskbar settings...'
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type DWord -Force
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Type DWord -Force
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name ColorPrevalence -Value 1 -Type DWord -Force
-Set-ItemProperty HKCU:\Software\Microsoft\Windows\DWM -Name ColorizationColor -Value 0xFF0078D7 -Type DWord -Force
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name SearchboxTaskbarMode -Value 0 -Type DWord -Force
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarDa -Value 0 -Type DWord -Force
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarAl -Value 0 -Type DWord -Force
@@ -22,7 +21,6 @@ Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanc
 Write-Host 'Restarting Explorer...'
 Stop-Process -Name explorer -Force
 Start-Sleep -Seconds 1
-# Start-Process explorer
 
 <#
 .SYNOPSIS
@@ -36,4 +34,47 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 Write-Host 'Installing applications'
-choco install -y vlc 7zip vscode powertoys googlechrome translucenttb --ignore-checksums --force
+
+
+# Core utilities
+choco install -y 7zip
+choco install -y git
+choco install -y openssl
+
+# Media and graphics
+choco install -y vlc
+choco install -y screentogif
+
+# Development tools
+choco install -y vscode
+choco install -y dbeaver
+choco install -y postman
+choco install -y python311
+choco install -y python312
+choco install -y python313
+choco install -y ruff
+choco install -y uv
+
+# Productivity and office
+choco install -y adobereader
+choco install -y notepadplusplus
+choco install -y notion
+choco install -y mailspring
+choco install -y chocolateygui
+
+# System utilities
+choco install -y powertoys
+choco install -y treesizefree
+choco install -y putty
+choco install -y winscp
+choco install -y shexview
+choco install -y rufus
+choco install -y unifying
+choco install -y wakeonlan
+
+# Browsers and terminals
+choco install -y googlechrome
+choco install -y warp-terminal
+
+# Development and design
+choco install -y docker-desktop
